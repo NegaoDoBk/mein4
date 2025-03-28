@@ -1,1 +1,92 @@
+/* Cor de fundo do corpo */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Gradiente suave para o fundo */
+}
+
+/* Caixa principal do conteúdo */
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px; /* Largura fixa */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-8px); /* Efeito de elevação ao passar o mouse */
+}
+
+/* Estilo do input */
+input {
+    padding: 12px;
+    width: 100%;
+    max-width: 250px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #4CAF50; /* Cor verde no foco */
+    outline: none;
+    background-color: #e6f7e1; /* Fundo leve verde quando ativo */
+}
+
+/* Estilo do botão */
+button {
+    padding: 12px 25px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: translateY(-2px); /* Efeito de flutuar no hover */
+}
+
+button:active {
+    transform: translateY(2px); /* Efeito de pressionar o botão */
+}
+
+/* Estilo do resultado */
+#resultado {
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilo para mensagens de acerto ou erro */
+#resultado.acerto {
+    color: #28a745; /* Verde para acerto */
+}
+
+#resultado.erro {
+    color: #e74c3c; /* Vermelho para erro */
+}
 
