@@ -6,97 +6,112 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #6e7e80, #a5c6d5); /* Gradiente suave de fundo */
-    color: #333;
     padding: 0;
-    overflow: hidden; /* Remove a barra de rolagem */
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente vibrante de fundo */
 }
 
 /* Caixa principal do conteúdo */
 .container {
     background: #ffffff;
-    padding: 40px;
-    border-radius: 16px; /* Borda arredondada */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    padding: 40px 30px;
+    border-radius: 20px; /* Bordas bem arredondadas */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra suave e moderna */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 320px; /* Largura fixa para o quadrado */
+    width: 350px; /* Largura fixa */
     text-align: center;
     transition: transform 0.3s ease-in-out;
 }
 
+/* Efeito de elevação ao passar o mouse */
 .container:hover {
-    transform: translateY(-8px); /* Efeito de elevação ao passar o mouse */
+    transform: translateY(-10px);
 }
 
 /* Título */
 h1 {
-    font-size: 30px;
-    color: #4c586a;
+    font-size: 36px;
+    color: #333;
     margin-bottom: 20px;
     font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Estilo para o input numérico */
+/* Estilo do input numérico */
 input {
     padding: 14px;
     margin: 15px 0;
     font-size: 18px;
     width: 100%;
-    max-width: 250px;
+    max-width: 280px;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 10px;
     border: 2px solid #ccc;
-    background-color: #f9f9f9;
-    transition: border-color 0.3s ease, background-color 0.3s ease;
+    background-color: #f4f4f4;
+    transition: all 0.3s ease;
 }
 
+/* Estilo quando o input estiver em foco */
 input:focus {
-    border-color: #4CAF50; /* Cor verde no foco */
+    border-color: #ff7e5f; /* Cor do contorno quando focado */
+    background-color: #fff6f4;
     outline: none;
-    background-color: #e6f7e1; /* Fundo leve verde quando ativo */
 }
 
 /* Estilo do botão */
 button {
-    padding: 14px 25px;
-    background: #007bff;
+    padding: 14px 30px;
+    background: #ff7e5f;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
     width: 100%;
-    max-width: 250px;
-    margin-top: 15px;
+    max-width: 280px;
+    margin-top: 20px;
 }
 
+/* Efeito do botão ao passar o mouse */
 button:hover {
-    background: #0056b3;
-    transform: translateY(-2px); /* Efeito de flutuar no hover */
+    background: #feb47b;
+    transform: translateY(-3px); /* Botão flutua ao passar o mouse */
 }
 
+/* Efeito de pressionamento do botão */
 button:active {
-    transform: translateY(2px); /* Efeito de pressionar o botão */
+    transform: translateY(1px); /* Botão se pressiona ao ser clicado */
 }
 
 /* Estilo do resultado */
 #resultado {
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 20px;
     font-weight: bold;
     color: #333;
+    transition: opacity 0.3s ease;
 }
 
-/* Estilo para mensagens de acerto ou erro */
+/* Estilo para acerto (verde) */
 #resultado.acerto {
-    color: #28a745; /* Verde para acerto */
+    color: #28a745;
 }
 
+/* Estilo para erro (vermelho) */
 #resultado.erro {
-    color: #e74c3c; /* Vermelho para erro */
+    color: #e74c3c;
+}
+
+/* Transição suave para os resultados */
+#resultado.visible {
+    opacity: 1;
+}
+
+/* Esconder o resultado inicialmente */
+#resultado {
+    opacity: 0;
 }
