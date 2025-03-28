@@ -1,27 +1,28 @@
-function verificarParImpar() {
-    const numero = document.getElementById('number').value;
-    const resultadoElement = document.getElementById('resultado');
+function jogar() {
+    let escolhaUsuario = document.getElementById("escolha").value;
+    let numeroUsuario = parseInt(document.getElementById("numeroUsuario").value);
 
-    // Verificar se o número está dentro do intervalo válido
-    if (numero < 1 || numero > 50 || isNaN(numero)) {
-        resultadoElement.textContent = "Por favor, digite um número entre 1 e 50!";
-        resultadoElement.className = ''; // Limpar qualquer classe anterior
+    if (isNaN(numeroUsuario) || numeroUsuario < 1 || numeroUsuario > 10) {
+        alert("Digite um número válido entre 1 e 10.");
         return;
     }
 
-    // Converter o número digitado em inteiro
-    const numeroEscolhido = parseInt(numero);
+    let numeroComputador = Math.floor(Math.random() * 10) + 1; // Computador escolhe de 1 a 10
+    let soma = numeroUsuario + numeroComputador;
+    let resultadoFinal = (soma % 2 === 0) ? "par" : "impar";
+    let escolhaComputador = (escolhaUsuario === "par") ? "impar" : "par";
 
-    // Verificar se o número é par ou ímpar
-    if (numeroEscolhido % 2 === 0) {
-        resultadoElement.textContent = `O número ${numeroEscolhido} é Par!`;
-        resultadoElement.className = 'par'; // Adicionar classe de resultado "par"
+    let mensagem = `Você escolheu <strong>${escolhaUsuario.toUpperCase()}</strong><br>
+                    Seu número: <strong>${numeroUsuario}</strong><br>
+                    Número do computador: <strong>${numeroComputador}</strong><br>
+                    Soma: <strong>${soma} (${resultadoFinal})</strong><br>
+                    Computador ficou com: <strong>${escolhaComputador.toUpperCase()}</strong><br>`;
+
+    if (escolhaUsuario === resultadoFinal) {
+        mensagem += "<span style='color: green;'>🎉 Você VENCEU!</span>";
     } else {
-        resultadoElement.textContent = `O número ${numeroEscolhido} é Ímpar!`;
-        resultadoElement.className = 'impar'; // Adicionar classe de resultado "ímpar"
+        mensagem += "<span style='color: red;'>💀 Você PERDEU!</span>";
     }
 
-    // Exibir o resultado com uma transição suave
-    resultadoElement.classList.add('visible');
+    document.getElementById("resultado").innerHTML = mensagem;
 }
-
