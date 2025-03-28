@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo Par ou Ímpar</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Jogo Ímpar ou Par</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Par ou Ímpar</h1>
-        <input type="number" id="number" min="1" max="50" placeholder="Digite um número (1-50)" />
-        <button onclick="verificarParImpar()">Verificar</button>
-        <p id="resultado"></p>
+        <h1>Ímpar ou Par</h1>
+        <label>Escolha:</label>
+        <select id="escolha">
+            <option value="par">Par</option>
+            <option value="impar">Ímpar</option>
+        </select>
+
+        <label>Digite um número (0-10):</label>
+        <input type="number" id="numeroUsuario" min="0" max="10">
+        
+        <button onclick="jogar()">Jogar</button>
+        
+        <div id="resultado"></div>
     </div>
 
     <script src="script.js"></script>
