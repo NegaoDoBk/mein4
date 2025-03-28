@@ -7,7 +7,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente vibrante de fundo */
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente suave de fundo */
 }
 
 /* Caixa principal do conteúdo */
@@ -97,13 +97,13 @@ button:active {
 }
 
 /* Estilo para acerto (verde) */
-#resultado.acerto {
-    color: #28a745;
+#resultado.par {
+    color: #28a745; /* Verde para par */
 }
 
-/* Estilo para erro (vermelho) */
-#resultado.erro {
-    color: #e74c3c;
+/* Estilo para ímpar (vermelho) */
+#resultado.impar {
+    color: #e74c3c; /* Vermelho para ímpar */
 }
 
 /* Transição suave para os resultados */

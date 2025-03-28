@@ -1,37 +1,27 @@
 function verificarParImpar() {
-    const number = document.getElementById('number').value;
-    const resultElement = document.getElementById('result');
-    const feedbackElement = document.getElementById('feedback');  // Substituindo acertoElement por feedbackElement
+    const numero = document.getElementById('number').value;
+    const resultadoElement = document.getElementById('resultado');
 
     // Verificar se o número está dentro do intervalo válido
-    if (number < 1 || number > 50 || isNaN(number)) {
-        resultElement.textContent = "Por favor, escolha um número entre 1 e 50!";
-        feedbackElement.textContent = "";
+    if (numero < 1 || numero > 50 || isNaN(numero)) {
+        resultadoElement.textContent = "Por favor, digite um número entre 1 e 50!";
+        resultadoElement.className = ''; // Limpar qualquer classe anterior
         return;
     }
 
-    // Convertendo o número escolhido para inteiro
-    const numeroEscolhido = parseInt(number);
+    // Converter o número digitado em inteiro
+    const numeroEscolhido = parseInt(numero);
 
-    // Gerando um número aleatório entre 1 e 50
-    const numeroSorteado = Math.floor(Math.random() * 50) + 1;
-
-    // Verificar se o número sorteado é par ou ímpar
-    const isNumeroPar = numeroSorteado % 2 === 0;
-
-    // Exibindo o número sorteado
-    resultElement.textContent = `O número sorteado foi: ${numeroSorteado}.`;
-
-    // Exibindo o número escolhido
-    feedbackElement.textContent = `Você escolheu: ${numeroEscolhido}.`;
-
-    // Verificando se o jogador acertou
-    if ((isNumeroPar && numeroEscolhido % 2 === 0) || (!isNumeroPar && numeroEscolhido % 2 !== 0)) {
-        feedbackElement.textContent += " Você acertou! Parabéns!";
-        feedbackElement.className = 'acertou';  // Adiciona classe de acerto
+    // Verificar se o número é par ou ímpar
+    if (numeroEscolhido % 2 === 0) {
+        resultadoElement.textContent = `O número ${numeroEscolhido} é Par!`;
+        resultadoElement.className = 'par'; // Adicionar classe de resultado "par"
     } else {
-        feedbackElement.textContent += " Você errou. Tente novamente!";
-        feedbackElement.className = 'errou';  // Adiciona classe de erro
+        resultadoElement.textContent = `O número ${numeroEscolhido} é Ímpar!`;
+        resultadoElement.className = 'impar'; // Adicionar classe de resultado "ímpar"
     }
+
+    // Exibir o resultado com uma transição suave
+    resultadoElement.classList.add('visible');
 }
 
